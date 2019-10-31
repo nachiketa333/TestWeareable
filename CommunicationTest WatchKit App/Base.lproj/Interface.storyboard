@@ -12,16 +12,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CommunicationTest_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="PEo-iJ-VR0">
+                        <group width="136" height="39" alignment="left" id="PEo-iJ-VR0">
                             <items>
-                                <button alignment="left" title="Push " id="fzB-f5-y2S">
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="10"/>
-                                    <connections>
-                                        <action selector="pushNameButton" destination="AgC-eL-Hgc" id="0dM-3f-Dbj"/>
-                                    </connections>
-                                </button>
-                                <label height="20" alignment="left" text="Label" numberOfLines="2" id="PMJ-75-bao">
+                                <label width="136" height="40" alignment="left" text="Label" numberOfLines="2" id="PMJ-75-bao">
                                     <fontDescription key="font" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
                                 </label>
                             </items>
@@ -82,7 +75,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="555" y="48.5"/>
+            <point key="canvasLocation" x="555" y="68"/>
         </scene>
         <!--Screen2 Sample-->
         <scene sceneID="rSw-iR-0SS">
