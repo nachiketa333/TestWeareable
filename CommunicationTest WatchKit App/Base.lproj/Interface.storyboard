@@ -27,7 +27,7 @@
                             </items>
                         </group>
                         <imageView width="47" height="47" alignment="center" image="pokeball" id="RxI-YZ-AgM"/>
-                        <label alignment="center" text="Albert is hungry" id="QdJ-Fj-LrR">
+                        <label width="136" height="31" alignment="center" text="Albert is hungry" id="QdJ-Fj-LrR">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
                         <group width="1" alignment="left" id="zVJ-eg-oyl">
@@ -62,10 +62,10 @@
                                 </button>
                             </items>
                         </group>
-                        <label width="136" alignment="center" text="Health: 100" id="Pt1-1p-5yN">
+                        <label width="136" height="26" alignment="center" text="Health: 100" id="Pt1-1p-5yN">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
-                        <label width="136" alignment="left" text="Hunger:0" id="dKY-o8-TSk"/>
+                        <label width="136" height="33" alignment="left" text="Hunger:0" id="dKY-o8-TSk"/>
                         <button width="1" alignment="left" title="Info To Phone" id="sTV-BR-M5s">
                             <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -82,7 +82,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="555" y="31.5"/>
+            <point key="canvasLocation" x="555" y="48.5"/>
         </scene>
         <!--Screen2 Sample-->
         <scene sceneID="rSw-iR-0SS">
@@ -111,7 +111,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="562" y="382"/>
+            <point key="canvasLocation" x="555" y="411"/>
         </scene>
     </scenes>
     <resources>

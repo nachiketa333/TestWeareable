@@ -86,6 +86,7 @@ class ViewController: UIViewController, WCSessionDelegate  {
     // -------------------
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
         
+        print("Button prerssed \nPokemon Selection sends message to watch..")
        
     }
     
@@ -106,7 +107,7 @@ class ViewController: UIViewController, WCSessionDelegate  {
                    // Send the message
                    WCSession.default.sendMessage(message, replyHandler:nil)
                    messageCounter = messageCounter + 1
-                   outputLabel.text = "Message Sent \(messageCounter) don't forget to scroll the watch screen!"
+                   outputLabel.text = "Message Sent \(messageCounter) \ndon't forget to scroll the watch screen!\nChoose the horizontal group button to perform an action"
                }
                else {
                    messageCounter = messageCounter + 1
@@ -133,7 +134,7 @@ class ViewController: UIViewController, WCSessionDelegate  {
                          // Send the message
                          WCSession.default.sendMessage(message, replyHandler:nil)
                          messageCounter = messageCounter + 1
-                         outputLabel.text = "Message Sent \(messageCounter) don't forget to scroll the watch screen!"
+                         outputLabel.text = "Message Sent \(messageCounter) \ndon't forget to scroll the watch screen!\nChoose the horizontal group button to perform an action"
                      }
                      else {
                          messageCounter = messageCounter + 1
