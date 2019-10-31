@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14868" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14643"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -25,7 +18,7 @@
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" pointSize="10"/>
                                     <connections>
-                                        <action selector="buttonPressed" destination="AgC-eL-Hgc" id="EFk-bs-nx7"/>
+                                        <action selector="pushNameButton" destination="AgC-eL-Hgc" id="0dM-3f-Dbj"/>
                                     </connections>
                                 </button>
                                 <label height="20" alignment="left" text="Label" numberOfLines="2" id="PMJ-75-bao">
@@ -50,7 +43,7 @@
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" pointSize="13"/>
                                     <connections>
-                                        <action selector="startButtonPressed" destination="AgC-eL-Hgc" id="Fp1-tc-PGk"/>
+                                        <action selector="startButtonPressed" destination="AgC-eL-Hgc" id="lnx-hT-Imc"/>
                                     </connections>
                                 </button>
                                 <button alignment="center" title="F" id="omX-xO-7Ft">
@@ -69,11 +62,13 @@
                                 </button>
                             </items>
                         </group>
-                        <label alignment="center" text="HP: 100   Hunger: 0" id="Pt1-1p-5yN">
+                        <label width="136" alignment="center" text="Health: 100" id="Pt1-1p-5yN">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
+                        <label width="136" alignment="left" text="Hunger:0" id="dKY-o8-TSk"/>
                     </items>
                     <connections>
+                        <outlet property="hungerLabel" destination="dKY-o8-TSk" id="QJo-0r-XeX"/>
                         <outlet property="messageLabel" destination="PMJ-75-bao" id="X1T-aZ-hg2"/>
                         <outlet property="nameLabel" destination="QdJ-Fj-LrR" id="HAA-SN-3Fj"/>
                         <outlet property="outputLabel" destination="Pt1-1p-5yN" id="Ojk-s6-fYf"/>
@@ -113,4 +108,7 @@
             <point key="canvasLocation" x="562" y="382"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pokeball" width="64" height="64"/>
+    </resources>
 </document>

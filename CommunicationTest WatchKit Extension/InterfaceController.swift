@@ -25,6 +25,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var outputLabel: WKInterfaceLabel!
     
     
+    @IBOutlet var hungerLabel: WKInterfaceLabel!
     
     // MARK: Delegate functions
     // ---------------------
@@ -40,6 +41,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // Message from phone comes in this format: ["course":"MADT"]
        let name = message["name"] as! String
         messageLabel.setText(name)
+        nameLabel.setText(name)
     }
     
 
@@ -63,6 +65,22 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        super.willActivate()
+        print("---WATCH APP LOADED---")
+             
+             if (WCSession.isSupported() == true) {
+                 messageLabel.setText("WC is supported!")
+                 
+                 // create a communication session with the phone
+                 let session = WCSession.default
+                 session.delegate = self
+                 session.activate()
+             }
+             else {
+                 messageLabel.setText("WC NOT supported!")
+             }
+             
         
         
     }
@@ -101,18 +119,57 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    @IBAction func pushNameButton() {
+        
+        
+    }
     
     // MARK: Functions for Pokemon Parenting
     @IBAction func nameButtonPressed() {
         print("name button pressed")
     }
 
+    var health:Int = 100
+    
+    var hunger:Int = 0
+    
     @IBAction func startButtonPressed() {
         print("Start button pressed")
+        print("Baby is awake and Active.....")
+        // It will reduce the health of the pokemon and will Increase the Hunger
+        if(health >= 10)
+        {
+        health = health - 10;
+          outputLabel.setText("Health: \(health)")
+        if(health <= 80)
+        {
+            hunger = hunger + 10
+            hungerLabel.setText("Hunger:\(hunger)")
+        }
+        }
+        else
+        {
+            outputLabel.setText(" Dead Bad Parent!!")
+        }
+        
     }
     
     @IBAction func feedButtonPressed() {
         print("Feed button pressed")
+        
+        if(health < 100 && hunger > 0)
+        {
+            health = health + 10
+            hunger = hunger - 10
+            
+            outputLabel.setText("Health:\(health)")
+            hungerLabel.setText("Hunger:\(hunger)")
+        }
+        else
+        {
+            outputLabel.setText("Fully Active!!")
+            hungerLabel.setText("Boom Boom !!")
+        }
     }
     
     @IBAction func hibernateButtonPressed() {

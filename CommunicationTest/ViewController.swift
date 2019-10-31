@@ -114,7 +114,7 @@ class ViewController: UIViewController, WCSessionDelegate  {
                    // Send the message
                    WCSession.default.sendMessage(message, replyHandler:nil)
                    messageCounter = messageCounter + 1
-                   outputLabel.text = "Message Sent \(messageCounter)"
+                   outputLabel.text = "Message Sent \(messageCounter) don't forget to scroll the watch screen!"
                }
                else {
                    messageCounter = messageCounter + 1
