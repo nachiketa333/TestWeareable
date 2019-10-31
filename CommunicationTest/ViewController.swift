@@ -97,14 +97,56 @@ class ViewController: UIViewController, WCSessionDelegate  {
         }
     }
     
+   var messageCounter = 0
     
+    @IBAction func pikachuButtonPressed(_ sender: Any) {
+        print("You pressed the Pikachu button")
+               
+            
+        print("Sending message to watch..")
+               // ------ SEND MESSAGE TO WATCH CODE GOES HERE
+               if (WCSession.default.isReachable == true) {
+                   // Here is the message you want to send to the watch
+                   // All messages get sent as dictionaries
+                   let message = ["name":"Pikachu Baby",
+                                  ] as [String : Any]
+                   
+                   // Send the message
+                   WCSession.default.sendMessage(message, replyHandler:nil)
+                   messageCounter = messageCounter + 1
+                   outputLabel.text = "Message Sent \(messageCounter)"
+               }
+               else {
+                   messageCounter = messageCounter + 1
+                   outputLabel.text = "Cannot reach watch! \(messageCounter)"
+               }
+    }
     // MARK: Choose a Pokemon actions
     
     @IBAction func pokemonButtonPressed(_ sender: Any) {
+        
         print("You pressed the pokemon button")
     }
     @IBAction func caterpieButtonPressed(_ sender: Any) {
         print("You pressed the caterpie button")
+        
+        print("Sending message to watch..")
+                     // ------ SEND MESSAGE TO WATCH CODE GOES HERE
+                     if (WCSession.default.isReachable == true) {
+                         // Here is the message you want to send to the watch
+                         // All messages get sent as dictionaries
+                         let message = ["name":"caterpie Baby",
+                                        ] as [String : Any]
+                         
+                         // Send the message
+                         WCSession.default.sendMessage(message, replyHandler:nil)
+                         messageCounter = messageCounter + 1
+                         outputLabel.text = "Message Sent \(messageCounter)"
+                     }
+                     else {
+                         messageCounter = messageCounter + 1
+                         outputLabel.text = "Cannot reach watch! \(messageCounter)"
+                     }
     }
     
     
