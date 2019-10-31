@@ -46,7 +46,14 @@ class ViewController: UIViewController, WCSessionDelegate  {
         print("Received a message from the watch: \(message)")
     }
 
-    
+    // can recieve message from watch .....
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+            // Output message to terminal
+            print("PHONE: I received a message: \(message)")
+            let name = message["name"] as! String
+           
+            outputLabel.text = (name)
+    }
     // MARK: Default ViewController functions
     // -----------------------------------
     override func viewDidLoad() {
@@ -79,22 +86,7 @@ class ViewController: UIViewController, WCSessionDelegate  {
     // -------------------
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
         
-        // 2. When person presses button, send message to watch
-        outputLabel.insertText("\nTrying to send message to watch")
-        
-        // 1. Try to send a message to the phone
-        if (WCSession.default.isReachable) {
-            let message = ["course": "MADT"]
-            WCSession.default.sendMessage(message, replyHandler: nil)
-            // output a debug message to the UI
-            outputLabel.insertText("\nMessage sent to watch")
-            // output a debug message to the console
-            print("Message sent to watch")
-        }
-        else {
-            print("PHONE: Cannot reach watch")
-            outputLabel.insertText("\nCannot reach watch")
-        }
+       
     }
     
    var messageCounter = 0
@@ -141,7 +133,7 @@ class ViewController: UIViewController, WCSessionDelegate  {
                          // Send the message
                          WCSession.default.sendMessage(message, replyHandler:nil)
                          messageCounter = messageCounter + 1
-                         outputLabel.text = "Message Sent \(messageCounter)"
+                         outputLabel.text = "Message Sent \(messageCounter) don't forget to scroll the watch screen!"
                      }
                      else {
                          messageCounter = messageCounter + 1

@@ -91,35 +91,35 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
 
     
+    var mesageCounter = 0
+    
     // MARK: Actions
     // ---------------------
+    @IBAction func messageToPhone() {
+        
+        if (WCSession.default.isReachable == true) {
+                  
+                  print("---sendind message to phone---")
+                         // Here is the message you want to send to the watch
+                         // All messages get sent as dictionaries
+                         let message = ["name":"Pikachu",
+                                       ] as [String : Any]
+                         
+                         // Send the message
+                         WCSession.default.sendMessage(message, replyHandler:nil)
+                         mesageCounter = mesageCounter + 1
+                          nameLabel.setText("Message Sent \(mesageCounter)")
+          }
+    }
     
     // 2. When person presses button on watch, send a message to the phone
     @IBAction func buttonPressed() {
         
-        if WCSession.default.isReachable {
-            print("Attempting to send message to phone")
-            self.messageLabel.setText("Sending msg to watch")
-            WCSession.default.sendMessage(
-                ["name" : "Pritesh"],
-                replyHandler: {
-                    (_ replyMessage: [String: Any]) in
-                    // @TODO: Put some stuff in here to handle any responses from the PHONE
-                    print("Message sent, put something here if u are expecting a reply from the phone")
-                    self.messageLabel.setText("Got reply from phone")
-            }, errorHandler: { (error) in
-                //@TODO: What do if you get an error
-                print("Error while sending message: \(error)")
-                self.messageLabel.setText("Error sending message")
-            })
-        }
-        else {
-            print("Phone is not reachable")
-            self.messageLabel.setText("Cannot reach phone")
-        }
+       
     }
     
     @IBAction func pushNameButton() {
+        
         
         
     }
@@ -173,7 +173,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     @IBAction func hibernateButtonPressed() {
+        
+        // in this pokemon will recover and health will set to 100
         print("Hibernate button pressed")
+        
+        health = 100
+        
+        hungerLabel.setText("LAMO! in recovery Mode")
     }
     
 }

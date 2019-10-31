@@ -66,6 +66,12 @@
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
                         <label width="136" alignment="left" text="Hunger:0" id="dKY-o8-TSk"/>
+                        <button width="1" alignment="left" title="Info To Phone" id="sTV-BR-M5s">
+                            <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="messageToPhone" destination="AgC-eL-Hgc" id="NnY-OC-Sl7"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="hungerLabel" destination="dKY-o8-TSk" id="QJo-0r-XeX"/>
